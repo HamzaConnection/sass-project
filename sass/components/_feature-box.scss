@@ -1,0 +1,25 @@
+.feature-box{
+    background-color: rgba($color-white, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    transition: transform .2s ease-out;
+    
+    & i {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        -webkit-background-clip: text;
+        background-clip: text; // to get the effect of green to dark green gradient on the image. 
+        color: transparent; // fiddle around with this and you will see what I mean with the above
+
+    }
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.05);
+    }
+
+  
+}

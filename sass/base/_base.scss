@@ -1,0 +1,19 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* So that the width and height is the actual specified not including paddings borders*/
+}
+
+html {
+    font-size: 62.5% /* The same as 10 px because default meaning 100% is 16 px*/ 
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
