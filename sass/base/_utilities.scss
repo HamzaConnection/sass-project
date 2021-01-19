@@ -1,0 +1,18 @@
+.center-text {
+    text-align: center;
+}
+
+
+//Margin & padding classes
+$spaceamounts: (1,2,3,4,5,6,7,8,9,10); 
+
+@each $val in $spaceamounts {
+    .mt-#{$val} {
+        margin-top: #{$val}rem;;
+    }
+
+    .mb-#{$val} {
+       margin-bottom: #{$val}rem;;
+   }
+
+}
