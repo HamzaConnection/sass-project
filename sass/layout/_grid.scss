@@ -1,20 +1,42 @@
 .row {
     max-width: $grid-width;
-    //background-color: #eee;
     margin: 0 auto;
+
+    //background-color: #eee;
     &:not(:last-child){ // to avoid padding on the last row
         margin-bottom: $gutter-vertical;
+        
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
+
+    
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+
+  
+
     @include clearfix;
 
     [class^=col-] // selects every class that starts with col-
     {
-        //background-color: orangered;
+        
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
-        }
 
+            @include respond(tab-port) {
+                margin-right: 0; // since we don't need the gutter because every col is not stacked on top of each other
+                margin-bottom: $gutter-vertical-small;
+            }
+        } 
+
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
     }
     
     .col-1-of-2{

@@ -9,19 +9,37 @@
     font-size: 1.6rem;
     transform: skewX(-12deg);
 
-  
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
 
+    @include respond(phone) {
+        transform: skewX(0);
+
+    }
+    
+    
     &__shape {
         width: 15rem;
         height: 15rem;
         float: left;
-        -webkit-shape-outside:circle(50% at 50% 50%); 
-        shape-outside: circle(50% at 50% 50%); // creates the circle shape where the image will be
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%); // clips the image in to a circle so it fits inside our shape we created above
+        
         transform: translateX(-3rem) skewX(12deg); // so the images is not skewed
         overflow: hidden;
-        
+
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% )) or  (-webkit-clip-path:polygon(0 0, 100% 0, 100% 75vh, 0 100% )) {
+            -webkit-shape-outside:circle(50% at 50% 50%); 
+            shape-outside: circle(50% at 50% 50%); // creates the circle shape where the image will be
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%); // clips the image in to a circle so it fits inside our shape we created above
+        }
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0); // so the images is not skewed
+    
+        }
     }
 
     &__img {
@@ -34,6 +52,10 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0deg);
+        }
     }
 
     &__caption {

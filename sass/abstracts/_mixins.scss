@@ -12,3 +12,45 @@
      left: 50%;
      transform: translate(-50%, -50%);
  }
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] this is where the normal styles apply
+1800px + :      Huge desktops
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+
+We use em because 1em = 16px no matter what browser we use 
+
+The reason why we don't use rem is because 1 rem is not set to the html font-size we set when using media queries
+
+Order of which we make a responsive design: Base + typography + general layout + grid > page layout > components
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){ @content }; // 600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em){ @content }; // 900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em){ @content }; // 1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em){ @content }; // 1800px
+    }
+}
+ 

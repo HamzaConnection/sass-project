@@ -15,6 +15,11 @@
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
+
+        @include respond(tab-port) {
+            top: 3rem;
+            right: 4rem;
+        }
     }
 
     &__background {
@@ -27,6 +32,12 @@
         background-image: radial-gradient($color-primary-light,$color-primary-dark);
         z-index: 1;
         transition: transform .6s;
+        
+        @include respond(tab-port) {
+            top: 3.5rem;
+            right: 4.5rem;
+        }
+
         
         
     }

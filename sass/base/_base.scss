@@ -6,14 +6,30 @@
 }
 
 html {
-    font-size: 62.5% /* The same as 10 px because default meaning 100% is 16 px*/ 
+    font-size: 62.5%; /* The same as 10 px because default meaning 100% is 16 px*/ 
+
+    @include respond(tab-land) { //width < 1200?
+        font-size: 56.25%;  //1rem = 9px, 8/16*100 = 50%
+    }
+    
+    
+    @include respond(tab-port) { //width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16*100 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12, 12/16*100 = 75%
+    }
+    
 }
 
+
+
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: $color-grey-dark;
+    box-sizing: border-box;
     padding: 3rem;
+    
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
